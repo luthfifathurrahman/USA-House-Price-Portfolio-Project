@@ -545,50 +545,122 @@ SELECT *
 FROM USAHousePrice..HousePrice
 ORDER BY price ASC
 
--- Looking For The Average Price for bedrooms
-SELECT DISTINCT bedrooms, ROUND(AVG(price),2) AS average_price
+-- Looking For The Average Price For Bedrooms
+SELECT bedrooms, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bedrooms
 ORDER BY bedrooms
 
--- Looking For The Average Price for bathrooms
+-- Creating View For The Average Price For Bedrooms
+CREATE VIEW AveragePriceBedrooms AS
+SELECT bedrooms, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY bedrooms
+
+SELECT *
+FROM AveragePriceBedrooms
+
+-- Looking For The Average Price For Bathrooms
 SELECT DISTINCT bathrooms, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bathrooms
 ORDER BY bathrooms
 
--- Looking For The Average Price for floors
-SELECT DISTINCT floors, ROUND(AVG(price),2) AS average_price
+-- Creating View For The Average Price for Bathrooms
+CREATE VIEW AveragePriceBathrooms AS
+SELECT DISTINCT bathrooms, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY bathrooms
+
+SELECT *
+FROM AveragePriceBathrooms
+
+-- Looking For The Average Price For Floors
+SELECT floors, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY floors
 ORDER BY floors
 
--- Looking For The Average Price for waterfront
-SELECT DISTINCT waterfront, ROUND(AVG(price),2) AS average_price
+-- Creating View For The Average Price For Floors
+CREATE VIEW AveragePriceFloors AS
+SELECT floors, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY floors
+
+SELECT *
+FROM AveragePriceFloors
+
+-- Looking For The Average Price For Waterfront
+SELECT waterfront, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY waterfront
 ORDER BY waterfront
 
+-- Creating View For The Average Price For Waterfront
+CREATE VIEW AveragePriceWaterfront AS
+SELECT waterfront, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY waterfront
+
+SELECT *
+FROM AveragePriceWaterfront
+
 -- Looking For The Average Price and Amount of House in Every City
-SELECT DISTINCT city, COUNT(city), ROUND(AVG(price),2) AS average_price
+SELECT city, COUNT(city) AS amount_of_house, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY city
 ORDER BY average_price DESC
 
--- Looking For The Average Price for basement
-SELECT DISTINCT basement, ROUND(AVG(price),2) AS average_price
+-- Creating View For The Average Price and Amount of House in Every City
+CREATE VIEW AveragePriceAmountPerCity AS
+SELECT city, COUNT(city) AS amount_of_house, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY city
+
+SELECT *
+FROM AveragePriceAmountPerCity
+
+-- Looking For The Average Price For Basement
+SELECT basement, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY basement
 ORDER BY basement
 
--- Looking For The Average Price for renovated
-SELECT DISTINCT renovated, ROUND(AVG(price),2) AS average_price
+-- Creating View For The Average Price For Basement
+CREATE VIEW AveragePriceBasement AS
+SELECT basement, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY basement
+
+SELECT *
+FROM AveragePriceBasement
+
+-- Looking For The Average Price For Renovated
+SELECT renovated, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY renovated
 ORDER BY renovated
 
+-- Creating View For The Average Price For Renovated
+CREATE VIEW AveragePriceRenovated AS
+SELECT renovated, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY renovated
+
+SELECT *
+FROM AveragePriceRenovated
+
 -- Looking For The Average Price and Amount of House in Every ZIP Code
-SELECT DISTINCT zip_code, COUNT(zip_code), ROUND(AVG(price),2) AS average_price
+SELECT zip_code, COUNT(zip_code) AS amount_of_house, ROUND(AVG(price),2) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY zip_code
 ORDER BY average_price DESC
+
+-- Creating View For The Average Price and Amount of House in Every ZIP Code
+CREATE VIEW AveragePriceAmountPerZIPCode AS
+SELECT zip_code, COUNT(zip_code) AS amount_of_house, ROUND(AVG(price),2) AS average_price
+FROM USAHousePrice..HousePrice
+GROUP BY zip_code
+
+SELECT *
+FROM AveragePriceAmountPerZIPCode
