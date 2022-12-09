@@ -17,6 +17,17 @@ WHERE TABLE_NAME = 'HousePrice'
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------- DATA CLEANSING -------------------------------------------
 ------------------------------------------------------------------------------------------------------
+-- id Column
+~~~~~~~~~~~~~~~~~~~~
+-- Checking The id Column
+SELECT id
+FROM USAHousePrice..HousePrice
+
+-- Checking Missing Value on id Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE id is null
+
 -- date Column
 ~~~~~~~~~~~~~~~~~~~~
 -- Checking The date Column
@@ -28,19 +39,22 @@ SELECT *
 FROM USAHousePrice..HousePrice
 WHERE date is null
 
--- Changing The Format Date on date Column
-SELECT date, CONVERT(date,Date)
-FROM USAHousePrice..HousePrice
+---- Changing The Format Date on date Column
+--SELECT date
+--FROM USAHousePrice..HousePrice
 
-ALTER TABLE USAHousePrice..HousePrice
-ADD date_converted date
+--SELECT date, CONVERT(date,Date)
+--FROM USAHousePrice..HousePrice
 
-UPDATE USAHousePrice..HousePrice
-SET date_converted = CONVERT(date,date)
+--ALTER TABLE USAHousePrice..HousePrice
+--ADD date_converted date
 
--- Removing date Column From Table
-ALTER TABLE USAHousePrice..HousePrice
-DROP COLUMN date
+--UPDATE USAHousePrice..HousePrice
+--SET date_converted = CONVERT(date,date)
+
+---- Removing date Column From Table
+--ALTER TABLE USAHousePrice..HousePrice
+--DROP COLUMN date
 
 ------------------------------------------------------------------------------------------------------
 -- price Column
@@ -52,6 +66,11 @@ FROM USAHousePrice..HousePrice
 -- Changing The Data Type of price Column
 ALTER TABLE USAHousePrice..HousePrice
 ALTER COLUMN price float
+
+-- Checking Missing Value on price Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE price is null
 
 ------------------------------------------------------------------------------------------------------
 -- bedrooms Column
@@ -69,18 +88,18 @@ SELECT DISTINCT bedrooms
 FROM USAHousePrice..HousePrice
 ORDER BY bedrooms
 
--- Changing The Value on The bedrooms 
-SELECT bedrooms,
-CASE WHEN bedrooms = 0 THEN 1
-ELSE bedrooms
-END
-FROM USAHousePrice..HousePrice
-ORDER BY bedrooms
+---- Changing The Value on The bedrooms 
+--SELECT bedrooms,
+--CASE WHEN bedrooms = 0 THEN 1
+--ELSE bedrooms
+--END
+--FROM USAHousePrice..HousePrice
+--ORDER BY bedrooms
 
-UPDATE USAHousePrice..HousePrice
-SET bedrooms = CASE WHEN bedrooms = 0 THEN 1
-ELSE bedrooms
-END
+--UPDATE USAHousePrice..HousePrice
+--SET bedrooms = CASE WHEN bedrooms = 0 THEN 1
+--ELSE bedrooms
+--END
 
 -- Checking Missing Value on The bedrooms Column
 SELECT *
@@ -103,53 +122,53 @@ SELECT DISTINCT bathrooms
 FROM USAHousePrice..HousePrice
 ORDER BY bathrooms
 
--- Changing The Value on The bathrooms Column
-SELECT bathrooms,
-CASE WHEN bathrooms = 0.75 THEN 1
-WHEN bathrooms = 1.25 THEN 2
-WHEN bathrooms = 1.5 THEN 2
-WHEN bathrooms = 1.75 THEN 2
-WHEN bathrooms = 2.25 THEN 3
-WHEN bathrooms = 2.5 THEN 3
-WHEN bathrooms = 2.75 THEN 3
-WHEN bathrooms = 3.25 THEN 4
-WHEN bathrooms = 3.5 THEN 4
-WHEN bathrooms = 3.75 THEN 4
-WHEN bathrooms = 4.25 THEN 5
-WHEN bathrooms = 4.5 THEN 5
-WHEN bathrooms = 4.75 THEN 5
-WHEN bathrooms = 5.25 THEN 6
-WHEN bathrooms = 5.5 THEN 6
-WHEN bathrooms = 5.75 THEN 6
-WHEN bathrooms = 6.25 THEN 7
-WHEN bathrooms = 6.5 THEN 7
-WHEN bathrooms = 6.75 THEN 7
-ELSE bathrooms
-END
-FROM USAHousePrice..HousePrice
+---- Changing The Value on The bathrooms Column
+--SELECT bathrooms,
+--CASE WHEN bathrooms = 0.75 THEN 1
+--WHEN bathrooms = 1.25 THEN 2
+--WHEN bathrooms = 1.5 THEN 2
+--WHEN bathrooms = 1.75 THEN 2
+--WHEN bathrooms = 2.25 THEN 3
+--WHEN bathrooms = 2.5 THEN 3
+--WHEN bathrooms = 2.75 THEN 3
+--WHEN bathrooms = 3.25 THEN 4
+--WHEN bathrooms = 3.5 THEN 4
+--WHEN bathrooms = 3.75 THEN 4
+--WHEN bathrooms = 4.25 THEN 5
+--WHEN bathrooms = 4.5 THEN 5
+--WHEN bathrooms = 4.75 THEN 5
+--WHEN bathrooms = 5.25 THEN 6
+--WHEN bathrooms = 5.5 THEN 6
+--WHEN bathrooms = 5.75 THEN 6
+--WHEN bathrooms = 6.25 THEN 7
+--WHEN bathrooms = 6.5 THEN 7
+--WHEN bathrooms = 6.75 THEN 7
+--ELSE bathrooms
+--END
+--FROM USAHousePrice..HousePrice
 
-UPDATE USAHousePrice..HousePrice
-SET bathrooms = CASE WHEN bathrooms = 0.75 THEN 1
-WHEN bathrooms = 1.25 THEN 2
-WHEN bathrooms = 1.5 THEN 2
-WHEN bathrooms = 1.75 THEN 2
-WHEN bathrooms = 2.25 THEN 3
-WHEN bathrooms = 2.5 THEN 3
-WHEN bathrooms = 2.75 THEN 3
-WHEN bathrooms = 3.25 THEN 4
-WHEN bathrooms = 3.5 THEN 4
-WHEN bathrooms = 3.75 THEN 4
-WHEN bathrooms = 4.25 THEN 5
-WHEN bathrooms = 4.5 THEN 5
-WHEN bathrooms = 4.75 THEN 5
-WHEN bathrooms = 5.25 THEN 6
-WHEN bathrooms = 5.5 THEN 6
-WHEN bathrooms = 5.75 THEN 6
-WHEN bathrooms = 6.25 THEN 7
-WHEN bathrooms = 6.5 THEN 7
-WHEN bathrooms = 6.75 THEN 7
-ELSE bathrooms
-END
+--UPDATE USAHousePrice..HousePrice
+--SET bathrooms = CASE WHEN bathrooms = 0.75 THEN 1
+--WHEN bathrooms = 1.25 THEN 2
+--WHEN bathrooms = 1.5 THEN 2
+--WHEN bathrooms = 1.75 THEN 2
+--WHEN bathrooms = 2.25 THEN 3
+--WHEN bathrooms = 2.5 THEN 3
+--WHEN bathrooms = 2.75 THEN 3
+--WHEN bathrooms = 3.25 THEN 4
+--WHEN bathrooms = 3.5 THEN 4
+--WHEN bathrooms = 3.75 THEN 4
+--WHEN bathrooms = 4.25 THEN 5
+--WHEN bathrooms = 4.5 THEN 5
+--WHEN bathrooms = 4.75 THEN 5
+--WHEN bathrooms = 5.25 THEN 6
+--WHEN bathrooms = 5.5 THEN 6
+--WHEN bathrooms = 5.75 THEN 6
+--WHEN bathrooms = 6.25 THEN 7
+--WHEN bathrooms = 6.5 THEN 7
+--WHEN bathrooms = 6.75 THEN 7
+--ELSE bathrooms
+--END
 
 -- Checking The Missing Value on The bathrooms Column
 SELECT *
@@ -211,6 +230,60 @@ ALTER TABLE USAHousePrice..HousePrice
 DROP COLUMN sqft_lot
 
 ------------------------------------------------------------------------------------------------------
+-- sqft_living15 Column
+~~~~~~~~~~~~~~~~~~~~~~~
+-- Checking The sqft_living15 Column
+SELECT sqft_living15
+FROM USAHousePrice..HousePrice
+
+-- Checking The Missing Value on The sqft_living15 Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE sqft_living15 is null
+
+-- Changing The Value on The sqft_living15 Column from sqft to sqm
+SELECT sqft_living15,
+ROUND((sqft_living15*0.092903),2) AS sqm_living15
+FROM USAHousePrice..HousePrice
+
+ALTER TABLE USAHousePrice..HousePrice
+ADD sqm_living15 float
+
+UPDATE USAHousePrice..HousePrice
+SET sqm_living15 = ROUND((sqft_living15*0.092903),2)
+
+-- Removing The sqft_living15 Column From Table
+ALTER TABLE USAHousePrice..HousePrice
+DROP COLUMN sqft_living15
+
+------------------------------------------------------------------------------------------------------
+-- sqft_lot15 Column
+~~~~~~~~~~~~~~~~~~~~~~~
+-- Checking The sqft_lot15 Column
+SELECT sqft_lot15
+FROM USAHousePrice..HousePrice
+
+-- Checking The Missing Value on The sqft_lot15 Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE sqft_lot15 is null
+
+-- Changing The Value on The sqft_lot15 Column from sqft to sqm
+SELECT sqft_lot15,
+ROUND((sqft_lot15*0.092903),2) AS sqm_lot15
+FROM USAHousePrice..HousePrice
+
+ALTER TABLE USAHousePrice..HousePrice
+ADD sqm_lot15 float
+
+UPDATE USAHousePrice..HousePrice
+SET sqm_lot15 = ROUND((sqft_lot15*0.092903),2)
+
+-- Removing The sqft_lot Column From Table
+ALTER TABLE USAHousePrice..HousePrice
+DROP COLUMN sqft_lot15
+
+------------------------------------------------------------------------------------------------------
 -- sqft_above Column
 ~~~~~~~~~~~~~~~~~~~~~~~
 -- Checking The sqft_above Column
@@ -251,8 +324,8 @@ WHERE sqft_basement is null
 
 -- Changing The Value on The sqft_basement Column from sqft to sqm
 SELECT sqft_basement,
-CASE WHEN sqft_basement > 0 THEN 'Yes'
-ELSE 'No'
+CASE WHEN sqft_basement > 0 THEN 'Have A Basement'
+ELSE 'Not Have A Basement'
 END
 FROM USAHousePrice..HousePrice
 
@@ -260,8 +333,8 @@ ALTER TABLE USAHousePrice..HousePrice
 ADD basement nvarchar(255)
 
 UPDATE USAHousePrice..HousePrice
-SET basement = CASE WHEN sqft_basement > 0 THEN 'Yes'
-ELSE 'No'
+SET basement = CASE WHEN sqft_basement > 0 THEN 'Have A Basement'
+ELSE 'Not Have A Basement'
 END
 
 -- Removing The sqft_lot Column From Table
@@ -284,21 +357,21 @@ SELECT DISTINCT floors
 FROM USAHousePrice..HousePrice
 ORDER BY floors
 
--- Changing The Value on The floors Column
-SELECT floors,
-CASE WHEN floors = 1.5 THEN 2
-WHEN floors = 2.5 THEN 3
-WHEN floors = 3.5 THEN 4
-ELSE floors
-END
-FROM USAHousePrice..HousePrice
+---- Changing The Value on The floors Column
+--SELECT floors,
+--CASE WHEN floors = 1.5 THEN 2
+--WHEN floors = 2.5 THEN 3
+--WHEN floors = 3.5 THEN 4
+--ELSE floors
+--END
+--FROM USAHousePrice..HousePrice
 
-UPDATE USAHousePrice..HousePrice
-SET floors = CASE WHEN floors = 1.5 THEN 2
-WHEN floors = 2.5 THEN 3
-WHEN floors = 3.5 THEN 4
-ELSE floors
-END
+--UPDATE USAHousePrice..HousePrice
+--SET floors = CASE WHEN floors = 1.5 THEN 2
+--WHEN floors = 2.5 THEN 3
+--WHEN floors = 3.5 THEN 4
+--ELSE floors
+--END
 
 -- Checking Missing Value on The floors Column
 SELECT *
@@ -319,8 +392,8 @@ ORDER BY waterfront
 
 -- Changing The Value on The waterfront Column
 SELECT waterfront,
-CASE WHEN waterfront = 0 THEN 'No'
-ELSE 'Yes'
+CASE WHEN waterfront = 0 THEN 'Not Have A Waterfront'
+ELSE 'Have A Waterfront'
 END
 FROM USAHousePrice..HousePrice
 
@@ -328,8 +401,8 @@ ALTER TABLE USAHousePrice..HousePrice
 ALTER COLUMN waterfront nvarchar(255)
 
 UPDATE USAHousePrice..HousePrice
-SET waterfront = CASE WHEN waterfront = 0 THEN 'No'
-ELSE 'Yes'
+SET waterfront = CASE WHEN waterfront = 0 THEN 'Not Have A Waterfront'
+ELSE 'Have A Waterfront'
 END
 
 -- Checking The Missing Value on The waterfront Column
@@ -349,23 +422,27 @@ SELECT DISTINCT scenery
 FROM USAHousePrice..HousePrice
 ORDER BY scenery
 
+-- Changing The Data Type of scenery Column
+ALTER TABLE USAHousePrice..HousePrice
+ALTER COLUMN scenery nvarchar(255)
+
 -- Changing The Value on The scenery Column
 SELECT scenery,
-CASE WHEN scenery = 0 THEN 1
-WHEN scenery = 1 THEN 2
-WHEN scenery = 2 THEN 3
-WHEN scenery = 3 THEN 4
-WHEN scenery = 4 THEN 5
+CASE WHEN scenery = 0 THEN 'No Scenery'
+WHEN scenery = 1 THEN 'Fair Scenery'
+WHEN scenery = 2 THEN 'Average Scenery'
+WHEN scenery = 3 THEN 'Good Scenery'
+WHEN scenery = 4 THEN 'Excelent Scenery'
 ELSE scenery
 END
 FROM USAHousePrice..HousePrice
 
 UPDATE USAHousePrice..HousePrice
-SET scenery = CASE WHEN scenery = 0 THEN 1
-WHEN scenery = 1 THEN 2
-WHEN scenery = 2 THEN 3
-WHEN scenery = 3 THEN 4
-WHEN scenery = 4 THEN 5
+SET scenery = CASE WHEN scenery = 0 THEN 'No Scenery'
+WHEN scenery = 1 THEN 'Fair Scenery'
+WHEN scenery = 2 THEN 'Average Scenery'
+WHEN scenery = 3 THEN 'Good Scenery'
+WHEN scenery = 4 THEN 'Excelent Scenery'
 ELSE scenery
 END
 
@@ -386,6 +463,30 @@ SELECT DISTINCT condition
 FROM USAHousePrice..HousePrice
 ORDER BY condition
 
+-- Changing The Data Type of condition Column
+ALTER TABLE USAHousePrice..HousePrice
+ALTER COLUMN condition nvarchar(255)
+
+-- Changing The Value on The condition Column
+SELECT condition,
+CASE WHEN condition = 1 THEN 'Poor Condition'
+WHEN condition = 2 THEN 'Fair Condition'
+WHEN condition = 3 THEN 'Average Condition'
+WHEN condition = 4 THEN 'Good Condition'
+WHEN condition = 5 THEN 'Excelent Condition'
+ELSE condition
+END
+FROM USAHousePrice..HousePrice
+
+UPDATE USAHousePrice..HousePrice
+SET condition = CASE WHEN condition = 1 THEN 'Poor Condition'
+WHEN condition = 2 THEN 'Fair Condition'
+WHEN condition = 3 THEN 'Average Condition'
+WHEN condition = 4 THEN 'Good Condition'
+WHEN condition = 5 THEN 'Excelent Condition'
+ELSE condition
+END
+
 -- Checking The Missing Value on The condition Column
 SELECT *
 FROM USAHousePrice..HousePrice
@@ -403,10 +504,50 @@ SELECT DISTINCT yr_built
 FROM USAHousePrice..HousePrice
 ORDER BY yr_built
 
--- Checking The Missing Value on The yr_built Column
+-- Changing The Value on The yr_built Column into age
+SELECT yr_built, (YEAR(GETDATE()) - yr_built) as AGE
+FROM USAHousePrice..HousePrice
+
+ALTER TABLE USAHousePrice..HousePrice
+ADD age int
+
+UPDATE USAHousePrice..HousePrice
+SET age = (YEAR(GETDATE()) - yr_built)
+
+-- Changing The Data Type of age Column
+ALTER TABLE USAHousePrice..HousePrice
+ALTER COLUMN age nvarchar(255)
+
+-- Changing The Value on The age Column
+SELECT age,
+CASE WHEN age <= 20 THEN '0-20'
+WHEN age BETWEEN 21 AND 40 THEN '21-40'
+WHEN age BETWEEN 41 AND 60 THEN '41-60'
+WHEN age BETWEEN 61 AND 80 THEN '61-80'
+WHEN age BETWEEN 81 AND 100 THEN '81-100'
+WHEN age > 100 THEN 'More Than 100'
+ELSE age
+END
+FROM USAHousePrice..HousePrice
+
+UPDATE USAHousePrice..HousePrice
+SET age = CASE WHEN age <= 20 THEN '0-20'
+WHEN age BETWEEN 21 AND 40 THEN '21-40'
+WHEN age BETWEEN 41 AND 60 THEN '41-60'
+WHEN age BETWEEN 61 AND 80 THEN '61-80'
+WHEN age BETWEEN 81 AND 100 THEN '81-100'
+WHEN age > 100 THEN 'More Than 100'
+ELSE age
+END
+
+-- Removing The yr_built Column From Table
+ALTER TABLE USAHousePrice..HousePrice
+DROP COLUMN yr_built
+
+-- Checking The Missing Value on The age Column
 SELECT *
 FROM USAHousePrice..HousePrice
-WHERE yr_built is null
+WHERE age is null
 
 ------------------------------------------------------------------------------------------------------
 -- yr_renovated Column
@@ -422,8 +563,8 @@ ORDER BY yr_renovated
 
 -- Changing The Value on The yr_renovated Column
 SELECT yr_renovated,
-CASE WHEN yr_renovated = 0 THEN 'No'
-ELSE 'Yes'
+CASE WHEN yr_renovated = 0 THEN 'Has Never Been Renovated'
+ELSE 'Has Been Renovated'
 END
 FROM USAHousePrice..HousePrice
 
@@ -431,103 +572,100 @@ ALTER TABLE USAHousePrice..HousePrice
 ADD renovated nvarchar(255)
 
 UPDATE USAHousePrice..HousePrice
-SET renovated = CASE WHEN yr_renovated = 0 THEN 'No'
-ELSE 'Yes'
+SET renovated = CASE WHEN yr_renovated = 0 THEN 'Has Never Been Renovated'
+ELSE 'Has Been Renovated'
 END
 
 -- Removing The yr_renovated Column From Table
 ALTER TABLE USAHousePrice..HousePrice
 DROP COLUMN yr_renovated
 
--- Checking The Missing Value on The scenery Column
+-- Checking The Missing Value on The renovated Column
 SELECT *
 FROM USAHousePrice..HousePrice
 WHERE renovated is null
 
 ------------------------------------------------------------------------------------------------------
--- street Column
+-- grade Column
 ~~~~~~~~~~~~~~~~~~~~~~~
 -- Checking The street Column
-SELECT street
+SELECT grade
 FROM USAHousePrice..HousePrice
 
--- Checking The Missing Value on The street Column
-SELECT *
+-- Checking The Unique Value on The grade Column
+SELECT DISTINCT grade
 FROM USAHousePrice..HousePrice
-WHERE street is null
+ORDER BY grade
 
-------------------------------------------------------------------------------------------------------
--- city Column
-~~~~~~~~~~~~~~~~~~~~~~~
--- Checking The city Column
-SELECT city
-FROM USAHousePrice..HousePrice
-
--- Checking The Unique Value on The city Column
-SELECT DISTINCT city
-FROM USAHousePrice..HousePrice
-ORDER BY city
-
--- Checking The Missing Value on The city Column
-SELECT *
-FROM USAHousePrice..HousePrice
-WHERE city is null
-
-------------------------------------------------------------------------------------------------------
--- statezip Column
-~~~~~~~~~~~~~~~~~~~~~~~
--- Checking The statezip Column
-SELECT statezip
-FROM USAHousePrice..HousePrice
-
--- Checking The Unique Value on The statezip Column
-SELECT DISTINCT statezip
-FROM USAHousePrice..HousePrice
-ORDER BY statezip
-
--- Checking The Missing Value on The statezip Column
-SELECT *
-FROM USAHousePrice..HousePrice
-WHERE statezip is null
-
--- Changing The Value on The statezip Column
-SELECT statezip,
-PARSENAME(REPLACE(statezip,' ','.'),1) as zip_code,
-PARSENAME(REPLACE(statezip,' ','.'),2) as state_house
-FROM USAHousePrice..HousePrice
-
+-- Changing The Data Type of grade Column
 ALTER TABLE USAHousePrice..HousePrice
-ADD zip_code numeric
+ALTER COLUMN grade nvarchar(255)
+
+-- Changing The Value on The grade Column
+SELECT grade,
+CASE WHEN grade BETWEEN 1 AND 3 THEN 'Poor Grade'
+WHEN grade BETWEEN 4 AND 6 THEN 'Fair Grade'
+WHEN grade = 7 THEN 'Average Grade'
+WHEN grade BETWEEN 8 AND 10 THEN 'Good Grade'
+WHEN grade BETWEEN 1 AND 13 THEN 'Very Good Grade'
+ELSE grade
+END
+FROM USAHousePrice..HousePrice
 
 UPDATE USAHousePrice..HousePrice
-SET zip_code = PARSENAME(REPLACE(statezip,' ','.'),1)
+SET grade = CASE WHEN grade BETWEEN 1 AND 3 THEN 'Poor Grade'
+WHEN grade BETWEEN 4 AND 6 THEN 'Fair Grade'
+WHEN grade = 7 THEN 'Average Grade'
+WHEN grade BETWEEN 8 AND 10 THEN 'Good Grade'
+WHEN grade BETWEEN 1 AND 13 THEN 'Very Good Grade'
+ELSE grade
+END
 
-ALTER TABLE USAHousePrice..HousePrice
-ADD state_house nvarchar(255)
-
-UPDATE USAHousePrice..HousePrice
-SET state_house = PARSENAME(REPLACE(statezip,' ','.'),2)
-
--- Removing The statezip Column
-ALTER TABLE USAHousePrice..HousePrice
-DROP COLUMN statezip
-
-------------------------------------------------------------------------------------------------------
--- country Column
-~~~~~~~~~~~~~~~~~~~~~~~
--- Checking The country Column
-SELECT country
-FROM USAHousePrice..HousePrice
-
--- Checking The Unique Value on The country Column
-SELECT DISTINCT country
-FROM USAHousePrice..HousePrice
-ORDER BY country
-
--- Checking The Missing Value on The country Column
+-- Checking The Missing Value on The grade Column
 SELECT *
 FROM USAHousePrice..HousePrice
-WHERE country is null
+WHERE grade is null
+
+------------------------------------------------------------------------------------------------------
+-- lat Column
+~~~~~~~~~~~~~~~~~~~~~~~
+-- Checking The lat Column
+SELECT lat
+FROM USAHousePrice..HousePrice
+
+-- Checking The Missing Value on The lat Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE lat is null
+
+------------------------------------------------------------------------------------------------------
+-- long Column
+~~~~~~~~~~~~~~~~~~~~~~~
+-- Checking The long Column
+SELECT long
+FROM USAHousePrice..HousePrice
+
+-- Checking The Missing Value on The long Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE long is null
+
+------------------------------------------------------------------------------------------------------
+-- zipcode Column
+~~~~~~~~~~~~~~~~~~~~~~~
+-- Checking The zipcode Column
+SELECT zipcode
+FROM USAHousePrice..HousePrice
+
+-- Checking The Unique Value on The zipcode Column
+SELECT DISTINCT zipcode
+FROM USAHousePrice..HousePrice
+ORDER BY zipcode
+
+-- Checking The Missing Value on The zipcode Column
+SELECT *
+FROM USAHousePrice..HousePrice
+WHERE zipcode is null
 
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------ DATA EXPLORATION ------------------------------------------
@@ -546,29 +684,30 @@ FROM USAHousePrice..HousePrice
 ORDER BY price ASC
 
 -- Looking For The Average Price For Bedrooms
-SELECT bedrooms, ROUND(AVG(price),2) AS average_price
+SELECT bedrooms, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bedrooms
-ORDER BY bedrooms
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price For Bedrooms
 CREATE VIEW AveragePriceBedrooms AS
-SELECT bedrooms, ROUND(AVG(price),2) AS average_price
+SELECT bedrooms, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bedrooms
 
 SELECT *
 FROM AveragePriceBedrooms
+ORDER BY average_price DESC
 
 -- Looking For The Average Price For Bathrooms
-SELECT DISTINCT bathrooms, ROUND(AVG(price),2) AS average_price
+SELECT DISTINCT bathrooms, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bathrooms
-ORDER BY bathrooms
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price for Bathrooms
 CREATE VIEW AveragePriceBathrooms AS
-SELECT DISTINCT bathrooms, ROUND(AVG(price),2) AS average_price
+SELECT DISTINCT bathrooms, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY bathrooms
 
@@ -576,14 +715,14 @@ SELECT *
 FROM AveragePriceBathrooms
 
 -- Looking For The Average Price For Floors
-SELECT floors, ROUND(AVG(price),2) AS average_price
+SELECT floors, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY floors
-ORDER BY floors
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price For Floors
 CREATE VIEW AveragePriceFloors AS
-SELECT floors, ROUND(AVG(price),2) AS average_price
+SELECT floors, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY floors
 
@@ -591,44 +730,29 @@ SELECT *
 FROM AveragePriceFloors
 
 -- Looking For The Average Price For Waterfront
-SELECT waterfront, ROUND(AVG(price),2) AS average_price
+SELECT waterfront, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY waterfront
-ORDER BY waterfront
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price For Waterfront
 CREATE VIEW AveragePriceWaterfront AS
-SELECT waterfront, ROUND(AVG(price),2) AS average_price
+SELECT waterfront, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY waterfront
 
 SELECT *
 FROM AveragePriceWaterfront
 
--- Looking For The Average Price and Amount of House in Every City
-SELECT city, COUNT(city) AS amount_of_house, ROUND(AVG(price),2) AS average_price
-FROM USAHousePrice..HousePrice
-GROUP BY city
-ORDER BY average_price DESC
-
--- Creating View For The Average Price and Amount of House in Every City
-CREATE VIEW AveragePriceAmountPerCity AS
-SELECT city, COUNT(city) AS amount_of_house, ROUND(AVG(price),2) AS average_price
-FROM USAHousePrice..HousePrice
-GROUP BY city
-
-SELECT *
-FROM AveragePriceAmountPerCity
-
 -- Looking For The Average Price For Basement
-SELECT basement, ROUND(AVG(price),2) AS average_price
+SELECT basement, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY basement
-ORDER BY basement
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price For Basement
 CREATE VIEW AveragePriceBasement AS
-SELECT basement, ROUND(AVG(price),2) AS average_price
+SELECT basement, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY basement
 
@@ -636,14 +760,14 @@ SELECT *
 FROM AveragePriceBasement
 
 -- Looking For The Average Price For Renovated
-SELECT renovated, ROUND(AVG(price),2) AS average_price
+SELECT renovated, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY renovated
-ORDER BY renovated
+ORDER BY average_price DESC
 
 -- Creating View For The Average Price For Renovated
 CREATE VIEW AveragePriceRenovated AS
-SELECT renovated, ROUND(AVG(price),2) AS average_price
+SELECT renovated, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
 GROUP BY renovated
 
@@ -651,16 +775,16 @@ SELECT *
 FROM AveragePriceRenovated
 
 -- Looking For The Average Price and Amount of House in Every ZIP Code
-SELECT zip_code, COUNT(zip_code) AS amount_of_house, ROUND(AVG(price),2) AS average_price
+SELECT zipcode, COUNT(zipcode) AS amount_of_house, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
-GROUP BY zip_code
+GROUP BY zipcode
 ORDER BY average_price DESC
 
 -- Creating View For The Average Price and Amount of House in Every ZIP Code
-CREATE VIEW AveragePriceAmountPerZIPCode AS
-SELECT zip_code, COUNT(zip_code) AS amount_of_house, ROUND(AVG(price),2) AS average_price
+CREATE VIEW AveragePriceAmountPerZIP AS
+SELECT zipcode, COUNT(zipcode) AS amount_of_house, ROUND(AVG(price),0) AS average_price
 FROM USAHousePrice..HousePrice
-GROUP BY zip_code
+GROUP BY zipcode
 
 SELECT *
-FROM AveragePriceAmountPerZIPCode
+FROM AveragePriceAmountPerZIP
