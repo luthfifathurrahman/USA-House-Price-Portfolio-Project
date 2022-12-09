@@ -11,25 +11,25 @@ Some people find it difficult to decide whether it is the right price or not. To
 ## What I Do In This Project
 
 - Analyzing Using Microsoft SQL
-  - Data Profiling.
-  - Data Cleansing.
-  - Data Exploration.
-    - Looking For The Highest Price.
-    - Looking For The Lowest Price.
-    - Looking For The Average Price For Bedrooms.
-      - Creating View.
-    - Looking For The Average Price For Bathrooms.
-      - Creating View.
-    - Looking For The Average Price For Floors.
-      - Creating View.
-    - Looking For The Average Price For Waterfront.
-      - Creating View.
-    - Looking For The Average Price For Basement.
-      - Creating View.
-    - Looking For The Average Price For Renovated.
-      - Creating View.
-    - Looking For The Average Price in Every ZIP Code.
-      - Creating View.
+	- Data Profiling.
+	- Data Cleansing.
+	- Data Exploration.
+		- Looking For The Highest Price.
+		- Looking For The Lowest Price.
+		- Looking For The Average Price For Bedrooms.
+			- Creating View.
+		- Looking For The Average Price For Bathrooms.
+			- Creating View.
+		- Looking For The Average Price For Floors.
+			- Creating View.
+		- Looking For The Average Price For Waterfront.
+			- Creating View.
+		- Looking For The Average Price For Basement.
+			- Creating View.
+		- Looking For The Average Price For Renovated.
+			- Creating View.
+		- Looking For The Average Price in Every ZIP Code.
+			- Creating View.
       
       
 - Analyzing Using Python
@@ -39,46 +39,59 @@ Some people find it difficult to decide whether it is the right price or not. To
 		- Showing The Information of The Data
 		- Checking The Outliers
 	- Data Cleansing
-    - Checking The id Column.
-    - Checking The date Column.
-    - Checking The price Column.
-    - Checking The bedrooms Column.
-    - Checking The bathrooms Column.
-    - Checking The sqft_living, sqft_lot, sqft_living15, sqft_lot15, and sqft_above Column.
-    - Checking The floors Column.
-    - Checking The waterfront Column.
-    - Checking The view Column.
-    - Checking The condition Column.
-    - Checking The grade Column.
-    - Checking The sqft_basement Column.
-    - Checking The yr_built Column.
-    - Checking The yr_renovated Column.
-    - Checking The zipcode Column.
-    - Checking The lat Column.
-    - Checking The long Column.
-  - Data Exploration.
-    - Looking For The Highest Price.
-    - Looking For The Lowest Price.
-    - Looking For The Average Price For Bedrooms.
-    - Looking For The Average Price For Bathrooms.
-    - Looking For The Average Price For Floors.
-    - Looking For The Average Price For Waterfront.
-    - Looking For The Average Price For Basement.
-    - Looking For The Average Price For Renovated.
-    - Looking For The Average Price in Every ZIP Code.
-    - Checking The Distribution of The Building On The Washington Map.
-  - Machine Learning
-    - Removing Duplicates in The Data
-    - Removing Outliers in The Data
-    - Label Encoding on The Dataset
-    - Separating Features and Labels
-    - Preparing Training, Testing, And Validating Dataset
-    - Building A Machine Learning Linear Regression Model
-    - Building A Machine Learning Random Forest Regressor Model
-    - Building A Machine Learning Decision Tree Regressor Model
-    - Building A Machine Learning Lasso Model
-    - Building A Machine Learning Ridge Model
-    - Comparing The Machine Learning Model
+		- Checking The id Column.
+    		- Checking The date Column.
+    		- Checking The price Column.
+    			- Visualization.
+    		- Checking The bedrooms Column.
+    			- Visualization.
+    		- Checking The bathrooms Column.
+    			- Visualization.
+    		- Checking The sqft_living, sqft_lot, sqft_living15, sqft_lot15, and sqft_above Column.
+    			- Visualization.
+    		- Checking The floors Column.
+    			- Visualization.
+    		- Checking The waterfront Column.
+    			- Visualization.
+    		- Checking The view Column.
+    			- Visualization.
+    		- Checking The condition Column.
+    			- Visualization.
+    		- Checking The grade Column.
+    			- Visualization.
+    		- Checking The sqft_basement Column.
+    			- Visualization.
+    		- Checking The yr_built Column.
+    			- Visualization.
+    		- Checking The yr_renovated Column.
+    			- Visualization.
+    		- Checking The zipcode Column.
+    			- Visualization.
+    		- Checking The lat Column.
+    		- Checking The long Column.
+  	- Data Exploration.
+		- Looking For The Highest Price.
+		- Looking For The Lowest Price.
+		- Looking For The Average Price For Bedrooms.
+		- Looking For The Average Price For Bathrooms.
+		- Looking For The Average Price For Floors.
+		- Looking For The Average Price For Waterfront.
+		- Looking For The Average Price For Basement.
+		- Looking For The Average Price For Renovated.
+		- Looking For The Average Price in Every ZIP Code.
+		- Checking The Distribution of The Building On The Washington Map.
+	- Machine Learning
+		- Removing Duplicates in The Data
+		- Removing Outliers in The Data
+		- Label Encoding on The Dataset
+		- Separating Features and Labels
+		- Preparing Training, Testing, And Validating Dataset
+		- Building A Machine Learning Linear Regression Model
+		- Building A Machine Learning Random Forest Regressor Model
+		- Building A Machine Learning Decision Tree Regressor Model
+		- Building A Machine Learning Lasso Model
+		- Building A Machine Learning Ridge Model
+		- Comparing The Machine Learning Model
     
 ## Conclusion
 
