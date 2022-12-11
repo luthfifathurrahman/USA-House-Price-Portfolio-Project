@@ -3,10 +3,13 @@
 What is a house?
 > According to Wikipedia, a house is a single-unit residential building. It may range in complexity from a rudimentary hut to a complex structure of wood, masonry, concrete, or other material, outfitted with plumbing, electrical, heating, ventilation, and air conditioning systems.
 
-<p align="justify"> Some houses are limited to one or more of the same number of families or social groups. People usually go outside to work, attend school, or do other activities that require social interaction in everyday activities. The most frequent activity in the house is rest and sleeping.
-A modern house consists of several rooms that each have a specific function: the bedroom, the bathroom, the kitchen, the living room, the dining room, the basement, and so forth.
-According to the explanation above, many people would like to own a house. To own a house, some of them built it from an empty space. Meanwhile, the others bought it directly from another person. When it comes to buying a house, many considerations need attention like how many bedrooms and bathrooms are there, how about the house’s condition, when the house was built, and the most important question what is the right price for a house.
-Some people find it difficult to decide whether it is the right price or not. To answer this question, I tried to help by building a machine learning model that predicts the price of a house. In creating this machine learning model, I used the dataset from Kaggle. </p>
+<p align="justify"> Some houses are limited to one or more of the same number of families or social groups. People usually go outside to work, attend school, or do other activities that require social interaction in everyday activities. The most frequent activity in the house is rest and sleeping.</p>
+
+<p align="justify">A modern house consists of several rooms that each have a specific function: the bedroom, the bathroom, the kitchen, the living room, the dining room, the basement, and so forth.</p>
+
+<p align="justify">According to the explanation above, many people would like to own a house. To own a house, some of them built it from an empty space. Meanwhile, the others bought it directly from another person. When it comes to buying a house, many considerations need attention like how many bedrooms and bathrooms are there, how about the house’s condition, when the house was built, and the most important question what is the right price for a house.</p>
+
+<p align="justify">Some people find it difficult to decide whether it is the right price or not. To answer this question, I tried to help by building a machine learning model that predicts the price of a house. In creating this machine learning model, I used the dataset from Kaggle.</p>
 
 ## What I Do In This Project
 
